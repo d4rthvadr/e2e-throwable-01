@@ -1,6 +1,7 @@
 # Todos App (React + Browser SQLite)
 
-Simple local-first todos app for UI automation practice.
+A simple, disposable local-first todos app for UI automation practice.
+It is designed to help learn Playwright by turning common manual smoke-test flows into automated end-to-end tests.
 
 ## Goal
 
@@ -117,28 +118,8 @@ Then log in with:
 - username: demo
 - password: demo1234
 
-## File Map
-
-- src/auth/AuthContext.tsx: auth/session logic
-- src/features/auth/AuthPage.tsx: login/signup UI
-- src/features/dashboard/DashboardPage.tsx: main todos dashboard
-- src/db/database.ts: SQLite bootstrap and persistence
-- src/db/usersRepo.ts: users/auth data access
-- src/db/tasksRepo.ts: task CRUD data access
-- src/dev/seed.ts: deterministic seed helper
-
 ## Scope Notes
 
 - Password hashing is client-side and intended for learning only.
 - This is not a production security model.
 - Data is local to the browser profile.
-
-## Review Checklist
-
-- Unauthenticated users only see auth page.
-- After login, dashboard is visible.
-- Refresh keeps logged-in session.
-- Two users cannot see each other tasks.
-- Task create/edit/toggle/delete persists after refresh.
-- Duplicate usernames are rejected.
-- Demo seed produces stable credentials and starter tasks.
