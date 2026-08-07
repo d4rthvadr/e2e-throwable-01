@@ -1,0 +1,262 @@
+:root {
+  --bg: #fff8ef;
+  --bg-alt: #f6ede2;
+  --surface: #fffdf9;
+  --surface-2: #fff6ea;
+  --text: #1f1913;
+  --muted: #6f6152;
+  --line: #dccfbe;
+  --primary: #0d7a64;
+  --primary-strong: #05503f;
+  --danger: #b73835;
+  --danger-strong: #891f1d;
+  --ok: #0d7a64;
+  --shadow: 0 10px 40px rgba(39, 23, 11, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% 20%, #fff3df 0, transparent 46%),
+    radial-gradient(circle at 80% 0, #e3f7f1 0, transparent 32%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.auth-layout,
+.dashboard-layout,
+.loading-layout {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.loading-layout {
+  display: grid;
+  place-items: center;
+}
+
+.auth-layout {
+  display: grid;
+  place-items: center;
+}
+
+.auth-card {
+  width: min(560px, 96vw);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+.mode-switch {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.mode-switch button {
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 0.55rem 0.75rem;
+  cursor: pointer;
+}
+
+.mode-switch button.active {
+  border-color: var(--primary);
+  color: var(--primary);
+  font-weight: 700;
+  background: #eefaf7;
+}
+
+.auth-form,
+.task-form,
+.edit-panel {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.65rem 0.7rem;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.7rem 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+}
+
+button:hover {
+  background: var(--primary-strong);
+}
+
+button.secondary {
+  background: #efe4d4;
+  color: #4a392b;
+}
+
+button.secondary:hover {
+  background: #e8d9c4;
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+button.danger:hover {
+  background: var(--danger-strong);
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.success-message {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.dashboard-layout {
+  width: min(980px, 96vw);
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.dashboard-header,
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.tasks-list {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.task-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.85rem;
+  background: #fff;
+}
+
+.task-item-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text);
+}
+
+.task-title {
+  font-weight: 700;
+}
+
+.task-title.completed {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.task-description {
+  margin-top: 0.6rem;
+  color: var(--muted);
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 1.2rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+  }
+
+  .task-item-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
