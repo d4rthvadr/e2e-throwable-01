@@ -62,6 +62,44 @@ npm run dev
 
 Open the dev URL shown by Vite.
 
+## Run the Playwright test
+
+Install Playwright once:
+
+```bash
+npm install
+npx playwright install
+```
+
+Run the generated Playwright tests:
+
+```bash
+npm run test:e2e
+```
+
+Run it in headed mode if you want to watch the browser:
+
+```bash
+npm run test:e2e:headed
+```
+
+Current Playwright coverage:
+
+- `login and signup with persistence`
+- `access dashboard and perform CRUD operations`
+
+Run just one test by title:
+
+```bash
+npx playwright test --grep "login and signup with persistence"
+```
+
+```bash
+npx playwright test --grep "access dashboard and perform CRUD operations"
+```
+
+The Playwright config starts the Vite app automatically on `http://127.0.0.1:5173`.
+
 ## Build Check
 
 ```bash
