@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "type": "command",
+        "command": "bash .github/hooks/scripts/after-edit-validation.sh",
+        "timeout": 900
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "bash .github/hooks/scripts/final-validation.sh",
+        "timeout": 1800
+      }
+    ]
+  }
+}

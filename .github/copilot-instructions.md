@@ -43,6 +43,7 @@
   - `npm run build`
   - `npm run lint`
   - `npm run test:e2e`
+- Workspace hooks in `.github/hooks/` run `npm run build` and `npm run lint` after agent file edits that touch app code, then run `npm run test:e2e` when the agent session stops.
 - If a change touches authentication, dashboard flows, or selectors, consider Playwright impact first.
 
 ## Scope Guardrails
