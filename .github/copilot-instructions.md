@@ -37,6 +37,19 @@
 - Prefer accessible queries and visible text that support both manual use and Playwright assertions.
 - Keep auth and dashboard flows stable: login/signup, session persistence, CRUD operations, logout, and seeded demo behavior.
 
+## Agent Delegation Workflow
+
+- Analyze each request first and break it into small subtasks before making changes.
+- Mark subtasks as independent or dependent; only independent subtasks are candidates for delegation.
+- Use delegation selectively, and run independent subtasks in parallel only when it reduces time and coordination risk.
+- Use specialized sub-agents primarily for investigation or research-heavy subtasks.
+- Keep implementation-heavy or tightly coupled work with the main agent when research depth is not needed.
+- Delegate only isolated subtasks that can run in separate worktrees.
+- Do not delegate subtasks that share dependencies or modify the same files.
+- If overlap exists in files, dependencies, or sequencing assumptions, execute those subtasks serially.
+- After delegation, review all sub-agent outputs, reconcile findings, and integrate changes in the main flow.
+- After integration, run relevant validation checks, including build, lint, and tests impacted by the change.
+
 ## Validation Expectations
 
 - For app changes, prefer these checks when relevant:
