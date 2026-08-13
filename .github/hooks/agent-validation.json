@@ -3,6 +3,11 @@
     "PostToolUse": [
       {
         "type": "command",
+        "command": "bash .github/hooks/scripts/log-tool-usage.sh",
+        "timeout": 120
+      },
+      {
+        "type": "command",
         "command": "bash .github/hooks/scripts/after-edit-validation.sh",
         "timeout": 900
       }
